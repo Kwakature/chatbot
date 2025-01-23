@@ -22,3 +22,7 @@ def choix_IA():
     if numero == 2:
         nomIA = 'gemma2:27b'
     return nomIA
+
+def ia_default():
+     nomIA = 'llama3.1:latest'
+     return nomIA
