@@ -16,8 +16,20 @@ label.pack()
 #ajoue d un bouton 
 def on_click():
     Pentrer = entry.get()
-    message.config(text=dep.appelIA(Pentrer, dep.ia_default()))
+    selectionner = ia_select.get()
+    message.config(text=dep.appelIA(Pentrer, selectionner))
 
+#boutton radio de selection d Ia a utiliser 
+ia_select = tk.StringVar()
+ia_select.set("llama3.1:latest")
+selectionner = ia_select.get()
+
+#affichage bouton radio
+r1 = tk.Radiobutton(root, text="llama3.1", variable=ia_select, value="llama3.1:latest")
+r1.pack()
+
+r2 = tk.Radiobutton(root, text="gemma2", variable=ia_select, value="gemma2:27b")
+r2.pack()
 
 # ajoue d un champs de texte 
 entry = tk.Entry(root)
